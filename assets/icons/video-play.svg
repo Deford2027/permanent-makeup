@@ -1,0 +1,16 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="100.665" height="100.665" viewBox="0 0 100.665 100.665" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="Group 1171275060">
+<foreignObject x="-19.5" y="-19.5" width="139.665" height="139.665"><div xmlns="http://www.w3.org/1999/xhtml" style="backdrop-filter:blur(9.75px);clip-path:url(#bgblur_0_0_29_clip_path);height:100%;width:100%"></div></foreignObject><g id="Ellipse 9" data-figma-bg-blur-radius="19.5">
+<use xlink:href="#stroke0_0_29" fill="white" fill-opacity="0.4"/>
+<mask id="stroke1_0_29" fill="white">
+<use xlink:href="#stroke0_0_29"/>
+</mask>
+<path d="M100.665 50.3324C100.665 78.1302 78.1302 100.665 50.3324 100.665C22.5346 100.665 0 78.1302 0 50.3324C0 22.5346 22.5346 0 50.3324 0C78.1302 0 100.665 22.5346 100.665 50.3324Z" stroke-width="2" stroke="white" mask="url(#stroke1_0_29)"/>
+</g>
+<path id="Polygon 2" d="M67.3041 45.1364C71.3041 47.4458 71.3041 53.2193 67.3041 55.5287L46.3466 67.6285C42.3466 69.9379 37.3466 67.0511 37.3466 62.4323L37.3466 38.2327C37.3466 33.6139 42.3466 30.7271 46.3466 33.0365L67.3041 45.1364Z" fill="white"/>
+</g>
+<defs>
+<clipPath id="bgblur_0_0_29_clip_path" transform="translate(19.5 19.5)"><path d="M50.332 0.5C77.8536 0.5 100.165 22.8105 100.165 50.332C100.165 77.8537 77.8537 100.165 50.332 100.165C22.8105 100.165 0.5 77.8536 0.5 50.332C0.500198 22.8106 22.8106 0.500198 50.332 0.5Z"/>
+</clipPath><path id="stroke0_0_29" d="M100.665 50.3324C100.665 78.1302 78.1302 100.665 50.3324 100.665C22.5346 100.665 0 78.1302 0 50.3324C0 22.5346 22.5346 0 50.3324 0C78.1302 0 100.665 22.5346 100.665 50.3324Z"/>
+</defs>
+</svg>

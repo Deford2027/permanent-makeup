@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Перманентный макияж и микроблейдинг — Анжела Богатырёва</title>
+  <meta name="description" content="Перманентный макияж бровей, губ, межреснички и микроблейдинг. Топ-мастер Анжела Богатырёва: более 10 000 процедур, естественный результат, премиальные материалы.">
+  <link rel="icon" href="assets/img/logo.webp" type="image/webp">
+  <link rel="preload" href="assets/fonts/TildaSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="header container">
+  <div class="header__bar">
+    <nav class="header__nav" aria-label="Основная навигация">
+      <a href="#services">Услуги</a>
+      <a href="#about">О мастере</a>
+      <a href="#portfolio">Портфолио</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+
+    <a href="#top" class="header__logo" aria-label="Анжела Богатырёва — на главную">
+      <img src="assets/img/logo.webp" alt="Логотип Angela Bogatyryova" width="100" height="76">
+    </a>
+
+    <div class="header__right">
+      <div class="header__contact">
+        <a href="tel:+74951200074" class="header__phone">+7 (495) 120-00-74</a>
+        <span class="header__hours">Ежедневно с 10 до 19</span>
+      </div>
+      <a href="https://t.me/" class="icon-btn" aria-label="Telegram" target="_blank" rel="noopener">
+        <img src="assets/icons/hdr-g2.svg" alt="" width="15" height="24">
+      </a>
+      <a href="https://wa.me/79164528689" class="icon-btn" aria-label="WhatsApp" target="_blank" rel="noopener">
+        <img src="assets/icons/hdr-g1.svg" alt="" width="15" height="16">
+      </a>
+      <button type="button" class="header__order" data-open="form">Заказать</button>
+    </div>
+
+    <button type="button" class="header__burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <div class="mobile-menu" id="mobile-menu" hidden>
+    <nav>
+      <a href="#services">Услуги</a>
+      <a href="#about">О мастере</a>
+      <a href="#portfolio">Портфолио</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <a href="tel:+74951200074" class="mobile-menu__phone">+7 (495) 120-00-74</a>
+    <span class="header__hours">Ежедневно с 10 до 19</span>
+    <button type="button" class="btn btn--sm" data-open="form">
+      <span>Записаться на консультацию</span><i class="btn__circle"><img src="assets/icons/btn-arrow.svg" alt="" width="17" height="14"></i>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero container">
+    <div class="hero__card">
+      <img class="hero__bg" src="assets/img/hero-bg.webp" alt="" width="1672" height="941" fetchpriority="high">
+      <img class="hero__master" src="assets/img/hero-master.webp" alt="Анжела Богатырёва — мастер перманентного макияжа" width="1000" height="1500" fetchpriority="high">
+
+      <div class="hero__panel">
+        <p class="hero__kicker">Красота, которая остаётся с вам надолго</p>
+        <h1 class="hero__title">
+          <span class="hero__title-main">Перманентный макияж</span>
+          <span class="hero__title-sub">и микроблейдинг</span>
+        </h1>
+        <p class="hero__text">Ваш идеальный образ без усилий: качественный перманентный макияж и художественный микроблейдинг.</p>
+        <button type="button" class="btn" data-open="form">
+          <span>Записаться на консультацию</span>
+          <i class="btn__circle"><img src="assets/icons/btn-arrow.svg" alt="" width="17" height="14"></i>
+        </button>
+      </div>
+
+      <div class="hero__master-info">
+        <div class="hero__master-text">
+          <p class="hero__name">Анжела<br>Богатырёва</p>
+          <p class="hero__role">Топ мастер перманентного макияжа и микроблейдинга</p>
+        </div>
+        <a href="#reviews" class="hero__video" aria-label="Смотреть видео работ">
+          <i class="hero__video-circle"><img src="assets/icons/play.svg" alt="" width="20" height="18"></i>
+          <span>Видео работы</span>
+        </a>
+      </div>
+    </div>
+
+    <ul class="features">
+      <li class="feature">
+        <span class="feature__icon"><img class="feature__icon-desktop" src="assets/icons/brush-badge.svg" alt="" width="54" height="54"><img class="feature__icon-mobile" src="assets/icons/brush.svg" alt="" width="18" height="18"></span>
+        <span class="feature__text">Более 10&nbsp;000 процедур</span>
+      </li>
+      <li class="feature">
+        <span class="feature__icon feature__icon--ring"><img src="assets/icons/eyebrow.svg" alt="" width="50" height="50"></span>
+        <span class="feature__text">Естественный результат</span>
+      </li>
+      <li class="feature">
+        <span class="feature__icon feature__icon--ring"><img src="assets/icons/lip-gloss.svg" alt="" width="34" height="34" class="feature__icon-sm"></span>
+        <span class="feature__text">Премиальные материалы</span>
+      </li>
+      <li class="feature">
+        <span class="feature__icon feature__icon--ring"><img src="assets/icons/time.svg" alt="" width="30" height="30" class="feature__icon-sm"></span>
+        <span class="feature__text">Процедура около часа</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ================= SERVICES ================= -->
+  <section class="section container" id="services">
+    <p class="section__label">Услуги</p>
+    <h2 class="section__title">Услуги для вашей естественной красоты</h2>
+    <p class="section__text">От деликатного перманентного макияжа до ухода за кожей и бровями. Подберём процедуру с учётом ваших пожеланий и особенностей внешности.</p>
+
+    <div class="services">
+      <article class="service service--tall" data-service="microblading">
+        <img src="assets/img/svc-microblading.webp" alt="" loading="lazy" width="700" height="836">
+        <h3 class="service__title">Микроблейдинг бровей волосковый</h3>
+        <button type="button" class="more" data-service-open="microblading">Подробнее<i><img src="assets/icons/more-arrow.svg" alt="" width="39" height="39"></i></button>
+      </article>
+      <article class="service" data-service="brows">
+        <img src="assets/img/svc-brows.webp" alt="" loading="lazy" width="700" height="875" style="object-position:top">
+        <h3 class="service__title">Перманентный макияж бровей</h3>
+        <button type="button" class="more" data-service-open="brows">Подробнее<i><img src="assets/icons/more-arrow.svg" alt="" width="39" height="39"></i></button>
+      </article>
+      <article class="service" data-service="lips">
+        <img src="assets/img/svc-lips.webp" alt="" loading="lazy" width="700" height="875">
+        <h3 class="service__title">Перманентный макияж губ</h3>
+        <button type="button" class="more" data-service-open="lips">Подробнее<i><img src="assets/icons/more-arrow.svg" alt="" width="39" height="39"></i></button>
+      </article>
+      <article class="service" data-service="laser">
+        <img src="assets/img/svc-laser.webp" alt="" loading="lazy" width="700" height="700">
+        <h3 class="service__title">Лазерное удаление татуажа/татуировок</h3>
+        <button type="button" class="more" data-service-open="laser">Подробнее<i><img src="assets/icons/more-arrow.svg" alt="" width="39" height="39"></i></button>
+      </article>
+      <article class="service" data-service="lash">
+        <img src="assets/img/svc-lash.webp" alt="" loading="lazy" width="700" height="1110">
+        <h3 class="service__title">Перманентный макияж межреснички</h3>
+        <button type="button" class="more" data-service-open="lash">Подробнее<i><img src="assets/icons/more-arrow.svg" alt="" width="39" height="39"></i></button>
+      </article>
+      <article class="service" data-service="remover">
+        <img src="assets/img/svc-remover.webp" alt="" loading="lazy" width="700" height="700">
+        <h3 class="service__title">Удаление татуажа ремувером</h3>
+        <button type="button" class="more" data-service-open="remover">Подробнее<i><img src="assets/icons/more-arrow.svg" alt="" width="39" height="39"></i></button>
+      </article>
+      <article class="service" data-service="carbon">
+        <img src="assets/img/svc-carbon.webp" alt="" loading="lazy" width="700" height="1244" style="object-position:50% 20%">
+        <h3 class="service__title">Карбоновый пилинг</h3>
+        <button type="button" class="more" data-service-open="carbon">Подробнее<i><img src="assets/icons/more-arrow.svg" alt="" width="39" height="39"></i></button>
+      </article>
+    </div>
+  </section>
+
+  <!-- ================= PORTFOLIO ================= -->
+  <section class="section container" id="portfolio">
+    <div class="section__head">
+      <div>
+        <p class="section__label">Портфолио</p>
+        <h2 class="section__title section__title--wide">Результаты, <br>которые говорят сами за себя</h2>
+        <p class="section__text section__text--wide">Реальные работы в техниках перманентного макияжа и микроблейдинга. Естественные оттенки, гармоничные формы и индивидуальный подбор под внешность клиента.</p>
+      </div>
+      <div class="slider-nav">
+        <button type="button" class="slider-nav__btn" data-slide="-1" aria-label="Предыдущая работа"><img src="assets/icons/slider-prev.svg" alt="" width="68" height="68" style="transform:rotate(180deg)"></button>
+        <button type="button" class="slider-nav__btn" data-slide="1" aria-label="Следующая работа"><img src="assets/icons/slider-next.svg" alt="" width="68" height="68"></button>
+      </div>
+    </div>
+
+    <div class="chips" role="tablist" aria-label="Фильтр работ">
+      <button type="button" class="chip" data-filter="all">Все работы</button>
+      <button type="button" class="chip" data-filter="brows">Перманентный макияж бровей</button>
+      <button type="button" class="chip is-active" data-filter="lips">Перманентный макияж губ</button>
+      <button type="button" class="chip" data-filter="lash">Перманентный макияж межреснички</button>
+      <button type="button" class="chip" data-filter="microblading">Микроблейдинг бровей волосковый</button>
+      <button type="button" class="chip" data-filter="laser">Лазерное удаление татуажа/татуировок</button>
+      <button type="button" class="chip" data-filter="remover">Удаление татуажа ремувером</button>
+      <button type="button" class="chip" data-filter="carbon">Карбоновый пилинг</button>
+    </div>
+
+    <div class="works" id="works">
+      <figure class="work" data-cat="lips"><img src="assets/img/pf-1.webp" alt="Перманентный макияж губ — результат" loading="lazy" width="860" height="1271"></figure>
+      <figure class="work" data-cat="lips"><img src="assets/img/pf-2-overlay.webp" alt="Перманентный макияж губ — результат" loading="lazy" width="860" height="1529" style="object-position:50% 30%"></figure>
+      <figure class="work" data-cat="lips"><img src="assets/img/pf-3.webp" alt="Перманентный макияж губ — результат" loading="lazy" width="860" height="736"></figure>
+    </div>
+    <p class="works__empty" hidden>Работы в этой категории скоро появятся. Посмотреть больше примеров можно в соцсетях мастера.</p>
+  </section>
+
+  <!-- ================= ABOUT ================= -->
+  <section class="section container" id="about">
+    <div class="about">
+      <div class="about__card">
+        <p class="section__label">О мастере</p>
+        <h2 class="section__title">Анжела Богатырёва <br>— мастер, которому доверяют красоту</h2>
+        <div class="about__text">
+          <p>Я — топ-мастер и преподаватель по перманентному макияжу и микроблейдингу. За время работы провела более 10&nbsp;000 процедур и разработала собственные техники, направленные на максимально естественный результат.</p>
+          <p>В работе использую премиальные пигменты и авторские миксы. Мой подход — не менять внешность, а деликатно подчёркивать её достоинства.</p>
+          <p>Особое внимание уделяю форме, оттенкам и тому, как перманент будет выглядеть после заживления. Стремлюсь к тому, чтобы пигмент постепенно светлел и выводился из кожи без нежелательных оттенков.</p>
+        </div>
+      </div>
+      <div class="about__photo">
+        <img src="assets/img/about-photo.webp" alt="Анжела Богатырёва" loading="lazy" width="1460" height="1947">
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= REVIEWS ================= -->
+  <section class="section container" id="reviews">
+    <p class="section__label">Отзывы</p>
+    <h2 class="section__title">Ваше доверие <br>— моя главная ценность</h2>
+    <p class="section__text section__text--narrow">Посмотрите, что говорят клиенты о процедурах, комфорте и полученных результатах.</p>
+
+    <div class="videos">
+      <div class="video"><img src="assets/img/rv-v1.webp" alt="Видеоотзыв клиента" loading="lazy" width="640" height="932"><img class="video__play" src="assets/icons/video-play.svg" alt="" width="100" height="100"></div>
+      <div class="video"><img src="assets/img/rv-v2.webp" alt="Видеоотзыв клиента" loading="lazy" width="640" height="974"><img class="video__play" src="assets/icons/video-play.svg" alt="" width="100" height="100"></div>
+      <div class="video"><img src="assets/img/rv-v3.webp" alt="Видеоотзыв клиента" loading="lazy" width="640" height="862"><img class="video__play" src="assets/icons/video-play.svg" alt="" width="100" height="100"></div>
+      <div class="video"><img src="assets/img/rv-v4.webp" alt="Видеоотзыв клиента" loading="lazy" width="640" height="976"><img class="video__play" src="assets/icons/video-play.svg" alt="" width="100" height="100"></div>
+    </div>
+
+    <div class="reviews" id="reviews-grid">
+      <div class="reviews__col">
+        <div class="review" style="--h:416px"><img src="assets/img/rv-1.webp" alt="Отзыв клиента" loading="lazy" style="object-position:50% 10%"></div>
+        <div class="review" style="--h:155px"><img src="assets/img/rv-6.webp" alt="Отзыв клиента" loading="lazy" style="object-position:top"></div>
+      </div>
+      <div class="reviews__col">
+        <div class="review" style="--h:592px"><img src="assets/img/rv-2.webp" alt="Отзыв клиента" loading="lazy"></div>
+        <div class="review" style="--h:218px"><img src="assets/img/rv-5.webp" alt="Отзыв клиента" loading="lazy" style="object-position:top"></div>
+      </div>
+      <div class="reviews__col">
+        <div class="review" style="--h:328px"><img src="assets/img/rv-7.webp" alt="Отзыв клиента" loading="lazy"></div>
+        <div class="review" style="--h:542px"><img src="assets/img/rv-4.webp" alt="Отзыв клиента" loading="lazy"></div>
+      </div>
+      <div class="reviews__col">
+        <div class="review" style="--h:279px"><img src="assets/img/rv-8.webp" alt="Отзыв клиента" loading="lazy" style="object-position:50% 15%"></div>
+        <div class="review" style="--h:293px"><img src="assets/img/rv-3.webp" alt="Отзыв клиента" loading="lazy" style="object-position:50% 20%"></div>
+      </div>
+    </div>
+
+    <div class="center">
+      <button type="button" class="btn btn--auto" id="reviews-toggle" aria-controls="reviews-grid" aria-expanded="false">
+        <span>Показать все отзывы</span>
+        <i class="btn__circle"><img src="assets/icons/btn-arrow.svg" alt="" width="17" height="14"></i>
+      </button>
+    </div>
+  </section>
+
+  <!-- ================= CONTACTS ================= -->
+  <section class="section container" id="contacts">
+    <div class="contacts">
+      <a class="contacts__map" href="https://yandex.ru/maps/?text=Краснодар,%20ул.%20Западный%20Обход,%2057к2" target="_blank" rel="noopener" aria-label="Открыть адрес на карте">
+        <img src="assets/img/map.webp" alt="Карта: Краснодар, ул. Западный Обход, 57к2" loading="lazy" width="934" height="889">
+      </a>
+      <div class="contacts__info">
+        <p class="section__label">Контакты</p>
+        <h2 class="section__title">Запишитесь <br>на консультацию</h2>
+        <p class="section__text">Расскажите, какой результат хотите получить. Помогу подобрать подходящую технику, оттенок и форму с учётом особенностей вашей внешности.</p>
+
+        <div class="contacts__block">
+          <p class="contacts__label">Адрес</p>
+          <p class="contacts__value">р-н Прикубанский Краснодарский край, Краснодар, ул.&nbsp;Западный Обход,&nbsp;57к2</p>
+        </div>
+
+        <div class="contacts__row">
+          <div class="contacts__block">
+            <p class="contacts__label">Телефон</p>
+            <a class="contacts__value contacts__phone" href="tel:+79164528689">+7 (916) 452-86-89</a>
+          </div>
+          <div class="contacts__block">
+            <p class="contacts__label">Соц. сети</p>
+            <div class="contacts__socials">
+              <a href="https://t.me/" class="icon-btn icon-btn--lg" aria-label="Telegram" target="_blank" rel="noopener"><img src="assets/icons/hdr-g2.svg" alt="" width="18" height="28"></a>
+              <a href="https://wa.me/79164528689" class="icon-btn icon-btn--lg" aria-label="WhatsApp" target="_blank" rel="noopener"><img src="assets/icons/hdr-g1.svg" alt="" width="17" height="18"></a>
+            </div>
+          </div>
+        </div>
+
+        <button type="button" class="btn" data-open="form">
+          <span>Записаться на консультацию</span>
+          <i class="btn__circle"><img src="assets/icons/btn-arrow.svg" alt="" width="17" height="14"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer container">
+  <img class="footer__logo" src="assets/img/logo-footer.webp" alt="Angela Bogatyryova Beauty Salon" loading="lazy" width="233" height="233">
+  <p class="footer__inn">ИНН: 920157541855</p>
+  <div class="footer__docs">
+    <p class="contacts__label">Юр. документы</p>
+    <a href="#">Политика конфиденциальности</a>
+    <a href="#">Пользовательское соглашение</a>
+  </div>
+  <p class="footer__made">💙 Сделано с любовью в Дефорд</p>
+</footer>
+
+<!-- ================= MODAL: FORM ================= -->
+<div class="modal" id="modal-form" role="dialog" aria-modal="true" aria-labelledby="form-title" hidden>
+  <div class="modal__overlay" data-close></div>
+  <div class="modal__dialog modal__dialog--form" tabindex="-1">
+    <div class="modal__panel">
+      <button type="button" class="modal__close" data-close aria-label="Закрыть"><img src="assets/icons/close.svg" alt="" width="22" height="22"></button>
+      <h2 class="modal__title" id="form-title">Оставьте заявку</h2>
+      <p class="modal__lead">и я свяжусь с вами в ближайшее время для обсуждения деталей</p>
+
+      <form class="form" id="lead-form" novalidate>
+        <input class="form__input" type="text" name="name" placeholder="Ваше имя" autocomplete="name" required>
+
+        <fieldset class="form__methods">
+          <legend>Связаться с вами в соц. сетях или по телефону</legend>
+          <label class="method" title="Telegram"><input type="radio" name="method" value="telegram" checked><span><img src="assets/icons/modal-g-tg.svg" alt="Telegram" width="17" height="27"></span></label>
+          <label class="method" title="WhatsApp"><input type="radio" name="method" value="whatsapp"><span><img src="assets/icons/modal-g-wa.svg" alt="WhatsApp" width="17" height="18"></span></label>
+          <label class="method" title="Телефон"><input type="radio" name="method" value="phone"><span><img src="assets/icons/phone.svg" alt="Телефон" width="20" height="20"></span></label>
+        </fieldset>
+
+        <input class="form__input" type="text" name="contact" placeholder="@username" required>
+
+        <label class="form__agree">
+          <input type="checkbox" name="agree" required>
+          <span>Согласен(-а) с <a href="#">пользовательским соглашением</a> и <a href="#">политикой конфиденциальности</a></span>
+        </label>
+
+        <p class="form__error" role="alert" hidden></p>
+
+        <button type="submit" class="btn btn--wide">
+          <span>Записаться на консультацию</span>
+          <i class="btn__circle"><img src="assets/icons/btn-arrow.svg" alt="" width="17" height="14"></i>
+        </button>
+      </form>
+
+      <div class="form__success" hidden>
+        <p class="modal__title">Спасибо!</p>
+        <p class="modal__lead">Заявка отправлена. Я свяжусь с вами в ближайшее время.</p>
+      </div>
+    </div>
+    <div class="modal__photo"><img src="assets/img/modal-form.webp" alt="" loading="lazy" width="1080" height="1350"></div>
+  </div>
+</div>
+
+<!-- ================= MODAL: SERVICE ================= -->
+<div class="modal" id="modal-service" role="dialog" aria-modal="true" aria-labelledby="svc-title" hidden>
+  <div class="modal__overlay" data-close></div>
+  <div class="modal__dialog modal__dialog--service" tabindex="-1">
+    <button type="button" class="modal__close" data-close aria-label="Закрыть"><img src="assets/icons/close.svg" alt="" width="22" height="22"></button>
+    <div class="svc">
+      <div class="svc__info">
+        <h2 class="modal__title" id="svc-title"></h2>
+        <p class="svc__desc"></p>
+        <div class="svc__adv-wrap">
+          <p class="svc__subtitle">Преимущества</p>
+          <div class="svc__adv"></div>
+        </div>
+        <div class="svc__price-wrap">
+          <p class="svc__subtitle">Цена</p>
+          <p class="svc__price"></p>
+        </div>
+        <button type="button" class="btn" data-open="form">
+          <span>Записаться на консультацию</span>
+          <i class="btn__circle"><img src="assets/icons/btn-arrow.svg" alt="" width="17" height="14"></i>
+        </button>
+      </div>
+      <div class="svc__gallery"></div>
+    </div>
+  </div>
+</div>
+
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>
