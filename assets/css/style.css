@@ -291,8 +291,9 @@ ul { list-style: none; }
 .about__card .section__title { max-width: 550px; }
 .about__text { margin-top: 30px; max-width: 494px; }
 .about__text p + p { margin-top: 22px; }
-.about__photo { border-radius: var(--radius); overflow: hidden; min-height: 576px; }
-.about__photo img { width: 100%; height: 100%; object-fit: cover; object-position: 0 62%; }
+.about__photo { position: relative; border-radius: var(--radius); overflow: hidden; min-height: 576px; }
+/* фото не задаёт высоту ряда: высота = карточке с текстом, обрезка сверху, голова в кадре */
+.about__photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 88%; }
 
 /* ---------- Reviews ---------- */
 .videos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 20px; }
