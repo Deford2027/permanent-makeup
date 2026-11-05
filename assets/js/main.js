@@ -250,6 +250,28 @@
   window.addEventListener('resize', updateNav);
   applyFilter($('.chip.is-active').dataset.filter);
 
+  /* ---------------- Video reviews: play inside the card ---------------- */
+  $$('.video[data-video]').forEach((card) => {
+    card.addEventListener('click', () => {
+      if (card.classList.contains('is-playing')) return;
+      // остановить остальные видео
+      $$('.video.is-playing video').forEach((v) => v.pause());
+      const video = document.createElement('video');
+      video.src = card.dataset.video;
+      video.controls = true;
+      video.playsInline = true;
+      video.preload = 'auto';
+      video.poster = $('img', card).src;
+      video.addEventListener('play', () => {
+        $$('.video.is-playing video').forEach((v) => { if (v !== video) v.pause(); });
+      });
+      card.classList.add('is-playing');
+      card.removeAttribute('aria-label');
+      card.append(video);
+      video.play().catch(() => {});
+    });
+  });
+
   /* ---------------- Reviews: show all ---------------- */
   const reviewsGrid = $('#reviews-grid');
   const reviewsBtn = $('#reviews-toggle');
