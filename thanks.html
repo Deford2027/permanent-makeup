@@ -10,9 +10,51 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=202611051919">
+  <link rel="stylesheet" href="assets/css/style.css?v=202611051925">
 </head>
 <body class="page-thanks">
+
+<!-- ================= PRELOADER ================= -->
+<div class="preloader" id="preloader" aria-hidden="true">
+  <div class="preloader__inner">
+    <div class="preloader__mark">
+      <svg class="preloader__ring" viewBox="0 0 200 200" width="200" height="200">
+        <defs>
+          <linearGradient id="plGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#deb497"/>
+            <stop offset="100%" stop-color="#986d53"/>
+          </linearGradient>
+        </defs>
+        <circle class="preloader__track" cx="100" cy="100" r="92"/>
+        <circle class="preloader__arc" cx="100" cy="100" r="92"/>
+      </svg>
+      <img class="preloader__logo" src="assets/img/logo.png" alt="" width="200" height="144">
+    </div>
+    <p class="preloader__name">Анжела Богатырёва</p>
+    <p class="preloader__sub">перманентный макияж</p>
+    <span class="preloader__bar"><i></i></span>
+  </div>
+</div>
+<script>
+  (function () {
+    var el = document.getElementById('preloader');
+    if (!el) return;
+    document.documentElement.classList.add('is-loading');
+    var start = Date.now(), MIN = 900, MAX = 5000, done = false;
+    function hide() {
+      if (done) return; done = true;
+      var wait = Math.max(0, MIN - (Date.now() - start));
+      setTimeout(function () {
+        el.classList.add('is-hidden');
+        document.documentElement.classList.remove('is-loading');
+        setTimeout(function () { el.remove(); }, 700);
+      }, wait);
+    }
+    if (document.readyState === 'complete') hide();
+    else window.addEventListener('load', hide);
+    setTimeout(hide, MAX);
+  })();
+</script>
 
 <header class="header container">
   <div class="header__bar">

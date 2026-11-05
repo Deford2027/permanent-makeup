@@ -638,6 +638,66 @@ button.video { display: block; width: 100%; padding: 0; background: #000; cursor
   .svc__info .btn .btn__circle { width: 33px; height: 33px; }
 }
 
+/* ---------- Preloader ---------- */
+html.is-loading, html.is-loading body { overflow: hidden; }
+.preloader {
+  position: fixed; inset: 0; z-index: 1000;
+  display: grid; place-items: center;
+  background: radial-gradient(120% 90% at 50% 40%, #fdf8f3 0%, var(--beige) 55%, #f3e6da 100%);
+  transition: opacity .6s ease, visibility .6s ease;
+}
+.preloader.is-hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+.preloader.is-hidden .preloader__inner { transform: translateY(-12px) scale(.98); }
+.preloader__inner { display: flex; flex-direction: column; align-items: center; transition: transform .6s ease; }
+.preloader__mark { position: relative; width: 170px; height: 170px; display: grid; place-items: center; }
+.preloader__ring { position: absolute; inset: 0; width: 100%; height: 100%; transform: rotate(-90deg); }
+.preloader__track { fill: none; stroke: rgba(152, 109, 83, .12); stroke-width: 1.5; }
+.preloader__arc {
+  fill: none; stroke: url(#plGrad); stroke-width: 2; stroke-linecap: round;
+  stroke-dasharray: 578; stroke-dashoffset: 578;
+  animation: pl-draw 1.6s cubic-bezier(.65, 0, .35, 1) forwards, pl-spin 2.4s linear 1.6s infinite;
+  transform-origin: 100px 100px;
+}
+.preloader__logo {
+  width: 104px; height: auto;
+  opacity: 0; transform: scale(.85);
+  animation: pl-logo .9s cubic-bezier(.2, .7, .2, 1) .15s forwards;
+}
+.preloader__name {
+  margin-top: 22px; font-size: 22px; letter-spacing: .02em; color: var(--brown);
+  opacity: 0; animation: pl-fade .7s ease .45s forwards;
+}
+.preloader__sub {
+  margin-top: 4px; font-size: 12px; letter-spacing: .32em; text-transform: uppercase; color: var(--gray);
+  opacity: 0; animation: pl-fade .7s ease .6s forwards;
+}
+.preloader__bar {
+  position: relative; display: block; width: 120px; height: 2px; margin-top: 22px;
+  border-radius: 2px; background: rgba(152, 109, 83, .14); overflow: hidden;
+  opacity: 0; animation: pl-fade .5s ease .7s forwards;
+}
+.preloader__bar i {
+  position: absolute; top: 0; bottom: 0; left: -40%; width: 40%;
+  border-radius: 2px; background: linear-gradient(90deg, #deb497, #986d53);
+  animation: pl-bar 1.2s ease-in-out infinite;
+}
+@keyframes pl-draw { to { stroke-dashoffset: 130; } }
+@keyframes pl-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@keyframes pl-logo { to { opacity: 1; transform: scale(1); } }
+@keyframes pl-fade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+@keyframes pl-bar { 0% { left: -40%; } 100% { left: 100%; } }
+@media (max-width: 600px) {
+  .preloader__mark { width: 136px; height: 136px; }
+  .preloader__logo { width: 84px; }
+  .preloader__name { font-size: 18px; margin-top: 18px; }
+  .preloader__sub { font-size: 10px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .preloader__arc { animation: none; stroke-dashoffset: 0; }
+  .preloader__logo, .preloader__name, .preloader__sub, .preloader__bar { animation: none; opacity: 1; transform: none; }
+  .preloader__bar i { animation: none; left: 0; width: 100%; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
