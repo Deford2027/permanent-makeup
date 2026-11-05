@@ -425,7 +425,6 @@ button.video { display: block; width: 100%; padding: 0; background: #000; cursor
 .form__agree a { text-decoration: underline; text-decoration-color: rgba(152,151,145,.4); text-underline-offset: 3px; }
 .form__error { margin-top: 12px; color: #c0614f; font-size: 15px; }
 .form .btn { margin-top: 48px; }
-.form__success { margin-top: 40px; }
 
 /* service modal */
 .modal__dialog--service { width: 1272px; max-width: 100%; padding: 27px; background: var(--beige); border-radius: 17.6px; }
@@ -666,4 +665,32 @@ button.video { display: block; width: 100%; padding: 0; background: #000; cursor
   .legal__meta { font-size: 12px; }
   .legal__body { font-size: 14px; margin-top: 20px; }
   .legal__body h2 { font-size: 18px; margin: 24px 0 10px; }
+}
+
+/* ---------- Thanks page ---------- */
+.thanks { margin-top: 10px; }
+.thanks__card { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; min-height: 637px; }
+.thanks__content { display: flex; flex-direction: column; align-items: flex-start; padding: 50px 43px 43px; background: var(--beige); border-radius: var(--radius); }
+.thanks__title { margin-top: 20px; font-weight: 400; font-size: 58px; line-height: .85; color: var(--brown); }
+.thanks__text { margin-top: 20px; max-width: 480px; }
+.thanks__text + .thanks__text { margin-top: 12px; }
+.thanks__text a { color: var(--brown); white-space: nowrap; }
+.thanks__socials { display: flex; gap: 6px; margin-top: 20px; margin-bottom: 30px; }
+.thanks__btn { margin-top: auto; }
+.thanks__visual { position: relative; overflow: hidden; border-radius: var(--radius); background: var(--beige); min-height: 420px; }
+.thanks__bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.thanks__master { position: absolute; left: 50%; top: 30px; width: 72%; max-width: 480px; height: auto; transform: translateX(-50%); }
+@media (max-width: 1024px) {
+  .thanks__card { grid-template-columns: 1fr; min-height: 0; }
+  .thanks__visual { order: -1; min-height: 0; aspect-ratio: 4 / 3; }
+  .thanks__master { top: 4%; width: 58%; max-width: 360px; }
+}
+@media (max-width: 600px) {
+  .thanks { margin-top: 24px; }
+  .thanks__card { gap: 6px; }
+  .thanks__content { padding: 22px 16px 20px; }
+  .thanks__title { margin-top: 10px; font-size: 30px; }
+  .thanks__text { margin-top: 12px; font-size: 14px; }
+  .thanks__socials { margin-bottom: 0; }
+  .thanks__btn { margin-top: 24px; }
 }

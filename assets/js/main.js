@@ -310,7 +310,6 @@
 
   /* ---------------- Lead form ---------------- */
   const form = $('#lead-form');
-  const success = $('.form__success');
   const errorBox = $('.form__error', form);
   const contactInput = form.elements.contact;
   const PLACEHOLDERS = { telegram: '@username', whatsapp: '+7 (___) ___-__-__', phone: '+7 (___) ___-__-__' };
@@ -325,8 +324,6 @@
 
   function resetForm() {
     form.reset();
-    form.hidden = false;
-    success.hidden = true;
     errorBox.hidden = true;
     $$('.is-invalid', form).forEach((el) => el.classList.remove('is-invalid'));
     syncContactField();
@@ -359,8 +356,8 @@
     // TODO: подключить отправку заявки (Telegram-бот / CRM / почта).
     document.dispatchEvent(new CustomEvent('lead:submit', { detail: payload }));
 
-    form.hidden = true;
-    success.hidden = false;
+    // после отправки — отдельная страница «Спасибо»
+    window.location.href = 'thanks.html';
   });
 
   syncContactField();
