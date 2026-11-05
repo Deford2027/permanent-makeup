@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=202611051847">
+  <link rel="stylesheet" href="assets/css/style.css?v=202611051855">
 </head>
 <body>
 
@@ -78,7 +78,7 @@
       <div class="hero__panel">
         <p class="hero__kicker">Красота, которая остаётся с вам надолго</p>
         <h1 class="hero__title">
-          <span class="hero__title-main">Перманентный макияж</span>
+          <span class="hero__title-main">Перманентный<br>макияж</span>
           <span class="hero__title-sub">и микроблейдинг</span>
         </h1>
         <p class="hero__text">Ваш идеальный образ без усилий: качественный перманентный макияж и художественный микроблейдинг.</p>
@@ -440,7 +440,17 @@
         <p class="modal__lead">Заявка отправлена. Я свяжусь с вами в ближайшее время.</p>
       </div>
     </div>
-    <div class="modal__photo"><img src="assets/img/modal-form.webp" alt="" loading="lazy" width="1080" height="1350"></div>
+    <div class="modal__photo slides" data-slides>
+      <img class="slide is-active" src="assets/img/modal-form.webp" alt="Перманентный макияж губ — до и после" loading="lazy">
+      <img class="slide" src="assets/img/works/brows-13.webp" alt="Перманентный макияж бровей — до и после" loading="lazy">
+      <img class="slide" src="assets/img/works/microblading-37.webp" alt="Микроблейдинг бровей — до и после" loading="lazy">
+      <img class="slide" src="assets/img/works/lips-13.webp" alt="Перманентный макияж губ" loading="lazy">
+      <img class="slide" src="assets/img/works/lash-04.webp" alt="Перманентный макияж межреснички" loading="lazy">
+      <img class="slide" src="assets/img/works/brows-07.webp" alt="Перманентный макияж бровей — до и после" loading="lazy">
+      <img class="slide" src="assets/img/works/laser-08.webp" alt="Лазерное удаление татуажа бровей — до и после" loading="lazy">
+      <img class="slide" src="assets/img/works/carbon-01.webp" alt="Карбоновый пилинг" loading="lazy">
+      <div class="slides__dots"><button type="button" class="slides__dot is-active" aria-label="Фото 1"></button><button type="button" class="slides__dot" aria-label="Фото 2"></button><button type="button" class="slides__dot" aria-label="Фото 3"></button><button type="button" class="slides__dot" aria-label="Фото 4"></button><button type="button" class="slides__dot" aria-label="Фото 5"></button><button type="button" class="slides__dot" aria-label="Фото 6"></button><button type="button" class="slides__dot" aria-label="Фото 7"></button><button type="button" class="slides__dot" aria-label="Фото 8"></button></div>
+    </div>
   </div>
 </div>
 
@@ -471,6 +481,6 @@
   </div>
 </div>
 
-<script src="assets/js/main.js?v=202611051847" defer></script>
+<script src="assets/js/main.js?v=202611051855" defer></script>
 </body>
 </html>

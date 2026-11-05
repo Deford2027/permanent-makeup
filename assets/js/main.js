@@ -250,6 +250,30 @@
   window.addEventListener('resize', updateNav);
   applyFilter($('.chip.is-active').dataset.filter);
 
+  /* ---------------- Form modal slideshow: смена фото каждые 3 секунды ---------------- */
+  $$('[data-slides]').forEach((box) => {
+    const slides = $$('.slide', box);
+    const dots = $$('.slides__dot', box);
+    const modal = box.closest('.modal');
+    let index = 0;
+    let timer = null;
+    const show = (i) => {
+      index = (i + slides.length) % slides.length;
+      slides.forEach((el, k) => el.classList.toggle('is-active', k === index));
+      dots.forEach((el, k) => el.classList.toggle('is-active', k === index));
+      // подгрузить следующее фото заранее
+      const next = slides[(index + 1) % slides.length];
+      if (next.loading === 'lazy') next.loading = 'eager';
+    };
+    const start = () => { stop(); timer = setInterval(() => show(index + 1), 3000); };
+    const stop = () => { if (timer) clearInterval(timer); timer = null; };
+    dots.forEach((dot, k) => dot.addEventListener('click', () => { show(k); start(); }));
+    // запускать только пока окно открыто
+    new MutationObserver(() => {
+      if (modal.hidden) { stop(); } else { slides.forEach((el) => { el.loading = 'eager'; }); show(0); start(); }
+    }).observe(modal, { attributes: true, attributeFilter: ['hidden'] });
+  });
+
   /* ---------------- Video reviews: play inside the card ---------------- */
   $$('.video[data-video]').forEach((card) => {
     card.addEventListener('click', () => {
