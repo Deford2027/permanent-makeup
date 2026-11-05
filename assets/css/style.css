@@ -525,10 +525,11 @@ button.video { display: block; width: 100%; padding: 0; background: #000; cursor
   .header__logo img { width: 62px; height: 45px; }
 
   /* hero — мобильный макет 320 */
-  .hero { margin-top: 30px; }
-  .hero__card { min-height: 0; padding: 212px 10px 10px; overflow: visible; background: none; }
+  .hero { margin-top: 64px; } /* фото выступает над рамкой на 41px — опускаем, чтобы голова не уходила под шапку */
+  .hero__card { min-height: 0; padding: 212px 10px 10px; overflow: visible; background: none;
+    clip-path: inset(-60px 0 0 0 round 0 0 10px 10px); } /* сверху фото может выступать, снизу и по бокам — обрезка по рамке */
   .hero__bg { border-radius: 10px; }
-  .hero__master { width: 103.6%; max-width: none; left: 1.4%; right: auto; top: -41px; border-radius: 0 0 10px 10px; clip-path: inset(0 3.5% 0 0 round 0 0 10px 10px); }
+  .hero__master { width: 103.6%; max-width: none; left: 1.4%; right: auto; top: -41px; }
   .hero__panel { width: 100%; padding: 29px 19px 20px; border-radius: 8.5px; }
   .hero__kicker { font-size: 10px; }
   .hero__title { margin-top: 4px; }
@@ -552,12 +553,14 @@ button.video { display: block; width: 100%; padding: 0; background: #000; cursor
   .btn--wide .btn__circle { width: 38px; height: 38px; }
 
   .features { gap: 5px 10px; margin-top: 6px; }
-  .feature { position: relative; height: 45px; padding: 0 22px 0 9px; gap: 0; border-radius: 10px; }
-  .feature__text { font-size: 14px; max-width: 105px; }
-  .feature__icon, .feature__icon--ring { position: absolute; top: 4px; right: 5px; width: 18px; height: 18px; border: 0; }
-  .feature__icon img, .feature__icon--ring img, .feature__icon--ring .feature__icon-sm { width: 18px; height: 18px; }
-  .feature__icon-desktop { display: none; }
-  .feature__icon .feature__icon-mobile { display: block; width: 16px; height: 16px; }
+  /* иконки как на десктопе: в круге, слева от текста */
+  .feature { height: 50px; padding: 0 8px; gap: 8px; border-radius: 10px; }
+  .feature__text { font-size: 13px; max-width: none; }
+  .feature__icon { width: 32px; height: 32px; }
+  .feature__icon--ring { border-width: 1px; }
+  .feature__icon > img { width: 32px; height: 32px; }
+  .feature__icon--ring img { width: 29px; height: 29px; }
+  .feature__icon--ring .feature__icon-sm { width: 19px; height: 19px; }
 
   .section__label { font-size: 10px; }
   .section__title { margin-top: 10px; font-size: 23.7px; line-height: .8; }
