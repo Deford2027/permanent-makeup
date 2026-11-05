@@ -259,9 +259,8 @@ ul { list-style: none; }
 .more:hover { transform: translateY(-2px); filter: drop-shadow(0 4px 10px rgba(0,0,0,.18)); }
 
 /* ---------- Portfolio ---------- */
-.slider-nav { display: flex; align-items: center; margin-bottom: 70px; }
+.slider-nav { display: flex; align-items: center; gap: 12px; flex: none; margin-bottom: 3px; /* низ кнопок на уровне нижней строки подзаголовка */ }
 .slider-nav__btn { width: 68px; height: 68px; border-radius: 50%; transition: opacity .2s, transform .2s; }
-.slider-nav__btn + .slider-nav__btn { margin-left: -14px; }
 .slider-nav__btn:hover { transform: scale(1.06); }
 .slider-nav__btn:disabled { opacity: .35; cursor: default; transform: none; }
 
