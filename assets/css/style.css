@@ -109,6 +109,7 @@ ul { list-style: none; }
 .header__phone { font-size: 14px; color: var(--gray); }
 .header__hours { font-size: 12px; color: var(--gray-2); }
 .header__order {
+  display: inline-flex; align-items: center; justify-content: center;
   height: 46px; width: 100px; margin-left: 2px;
   border: 1px solid var(--gray); border-radius: 44px;
   font-size: 14px; color: #a4a39d;
@@ -429,10 +430,14 @@ ul { list-style: none; }
 .svc__price { margin-top: 10px; font-size: 41px; line-height: .8; color: var(--brown); white-space: nowrap; }
 .svc__info .btn { margin-top: 13px; width: 475px; height: 79px; font-size: 21px; padding-left: 30px; }
 .svc__info .btn .btn__circle { width: 58px; height: 58px; }
-.svc__gallery { display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: 344px 203px; gap: 11px 5px; margin-top: 16px; margin-right: 43px; align-self: start; }
-.svc__gallery img { width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius); }
-.svc__gallery img:first-child { grid-column: 1 / -1; }
-.svc__gallery--single { grid-template-rows: 558px; }
+.svc__gallery { display: flex; flex-direction: column; gap: 8px; margin-top: 16px; margin-right: 43px; align-self: start; min-width: 0; }
+.svc__main { width: 100%; height: 452px; object-fit: contain; background: #efe4da; border-radius: var(--radius); }
+.svc__gallery--single .svc__main { height: 558px; object-fit: cover; }
+.svc__thumbs { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; }
+.svc__thumb { height: 92px; border-radius: 12px; overflow: hidden; opacity: .6; outline: 2px solid transparent; outline-offset: -2px; transition: opacity .2s, outline-color .2s; }
+.svc__thumb img { width: 100%; height: 100%; object-fit: cover; }
+.svc__thumb:hover { opacity: .9; }
+.svc__thumb.is-active { opacity: 1; outline-color: var(--brown); }
 
 /* ==========================================================================
    Responsive
@@ -495,7 +500,9 @@ ul { list-style: none; }
   .modal__photo { display: none; }
   .modal__dialog--service { width: 720px; }
   .svc { grid-template-columns: 1fr; }
-  .svc__gallery { margin: 0; grid-template-rows: 320px 180px; }
+  .svc__gallery { margin: 0; }
+  .svc__main { height: 420px; }
+  .svc__gallery--single .svc__main { height: 360px; }
   .svc__info .btn { width: 100%; }
 }
 
@@ -604,8 +611,11 @@ ul { list-style: none; }
   .form__agree input:checked::after { width: 2.5px; height: 5px; }
   .form .btn { margin-top: 16px; }
 
-  .svc__gallery { grid-template-rows: 200px 110px; gap: 5px; }
-  .svc__gallery--single { grid-template-rows: 220px; }
+  .svc__gallery { gap: 5px; }
+  .svc__main { height: 300px; border-radius: 10px; }
+  .svc__gallery--single .svc__main { height: 220px; }
+  .svc__thumbs { gap: 4px; }
+  .svc__thumb { height: 56px; border-radius: 6px; }
   .svc__desc { margin-top: 10px; }
   .svc__subtitle { font-size: 12px; }
   .svc__adv { margin-top: 8px; }
@@ -618,4 +628,29 @@ ul { list-style: none; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+
+/* ---------- Legal pages ---------- */
+.legal { margin-top: 40px; }
+.legal__back { display: inline-block; margin-bottom: 20px; color: var(--brown); font-size: 18px; }
+.legal__back:hover { text-decoration: underline; text-underline-offset: 4px; }
+.legal__card { padding: 50px 60px 60px; background: var(--beige); border-radius: var(--radius); }
+.legal__title { max-width: 900px; font-weight: 400; font-size: 44px; line-height: 1; color: var(--brown); }
+.legal__meta { margin-top: 10px; font-size: 16px; }
+.legal__meta:first-of-type { margin-top: 24px; }
+.legal__body { max-width: 900px; margin-top: 30px; font-size: 17px; line-height: 1.5; color: #7d7c76; }
+.legal__body h2 { margin: 36px 0 14px; font-weight: 400; font-size: 26px; line-height: 1.15; color: var(--brown); }
+.legal__body p + p { margin-top: 10px; }
+.legal__body ul { margin: 10px 0 14px; padding-left: 22px; list-style: disc; }
+.legal__body li + li { margin-top: 6px; }
+.legal__body a, .legal__meta a, .legal__other a { color: var(--brown); text-decoration: underline; text-underline-offset: 3px; word-break: break-word; }
+.legal__num { color: var(--brown); }
+.legal__other { margin-top: 24px; }
+@media (max-width: 600px) {
+  .legal { margin-top: 24px; }
+  .legal__card { padding: 22px 16px 28px; }
+  .legal__title { font-size: 24px; }
+  .legal__meta { font-size: 12px; }
+  .legal__body { font-size: 14px; margin-top: 20px; }
+  .legal__body h2 { font-size: 18px; margin: 24px 0 10px; }
 }

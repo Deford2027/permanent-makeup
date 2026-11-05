@@ -28,7 +28,7 @@
         ['Естественный вид:', 'современные техники (особенно акварельная) позволяют добиться эффекта «своих» ухоженных губ без ощущения яркой помады.'],
       ],
       price: '8 000 ₽',
-      images: ['modal-lips-main', 'modal-lips-1', 'modal-lips-2', 'modal-lips-3'],
+      images: ['works/brows-17.webp', 'works/lips-09.webp', 'works/lips-13.webp', 'works/lips-04.webp', 'works/lips-06.webp'],
     },
     microblading: {
       title: 'Микроблейдинг бровей волосковый',
@@ -39,7 +39,7 @@
         ['Экономия времени:', 'не нужно каждое утро рисовать брови карандашом или тенями — они ухожены в любой ситуации, даже после бассейна.'],
       ],
       price: '9 000 ₽',
-      images: ['svc-microblading'],
+      images: ['works/microblading-37.webp', 'works/microblading-28.webp', 'works/microblading-20.webp', 'works/microblading-11.webp', 'works/microblading-31.webp'],
     },
     brows: {
       title: 'Перманентный макияж бровей',
@@ -50,7 +50,7 @@
         ['Подходит всем:', 'техника хорошо ложится на жирную и чувствительную кожу, где волосковые штрихи со временем могут расплываться.'],
       ],
       price: '8 000 ₽',
-      images: ['svc-brows'],
+      images: ['works/brows-13.webp', 'works/brows-07.webp', 'works/brows-12.webp', 'works/brows-14.webp', 'works/brows-02.webp'],
     },
     laser: {
       title: 'Лазерное удаление татуажа/татуировок',
@@ -61,7 +61,7 @@
         ['Подготовка к новому:', 'лазер осветляет неудачную работу, после чего можно сделать новый перманент с правильной формой и цветом.'],
       ],
       price: '2 000 ₽',
-      images: ['svc-laser'],
+      images: ['works/laser-08.webp', 'works/laser-03.webp', 'works/laser-01.webp', 'works/laser-05.webp', 'works/laser-10.webp'],
     },
     lash: {
       title: 'Перманентный макияж межреснички',
@@ -72,7 +72,7 @@
         ['Комфорт в жизни:', 'макияж не растекается в жару, в бассейне и на тренировке, а подходит и тем, кто носит контактные линзы.'],
       ],
       price: '6 000 ₽',
-      images: ['svc-lash'],
+      images: ['works/lash-04.webp', 'works/lash-03.webp', 'works/lash-08.webp', 'works/lash-07.webp', 'works/lash-05.webp'],
     },
     remover: {
       title: 'Удаление татуажа ремувером',
@@ -83,7 +83,7 @@
         ['Бережность к волоскам:', 'процедура не повреждает волосяные луковицы, поэтому собственные брови продолжают расти как раньше.'],
       ],
       price: '2 000 ₽',
-      images: ['svc-remover'],
+      images: ['svc-remover.webp'],
     },
     carbon: {
       title: 'Карбоновый пилинг',
@@ -94,7 +94,7 @@
         ['Без реабилитации:', 'после сеанса нет покраснений и шелушения, поэтому можно сразу вернуться к работе и обычным делам.'],
       ],
       price: '2 500 ₽',
-      images: ['svc-carbon'],
+      images: ['works/carbon-01.webp', 'works/carbon-02.webp'],
     },
   };
 
@@ -169,17 +169,43 @@
     $('.svc__price', svcModal).textContent = data.price || '';
     priceWrap.hidden = !data.price;
 
-    const gallery = $('.svc__gallery', svcModal);
-    gallery.classList.toggle('svc__gallery--single', data.images.length === 1);
-    gallery.replaceChildren(...data.images.map((name) => {
-      const img = new Image();
-      img.src = `assets/img/${name}.webp`;
-      img.alt = data.title;
-      img.decoding = 'async';
-      return img;
-    }));
+    renderGallery($('.svc__gallery', svcModal), data);
 
     openModal('modal-service');
+  }
+
+  /* Галерея в окне услуги: большое фото целиком + миниатюры */
+  function renderGallery(gallery, data) {
+    const src = (name) => `assets/img/${name}`;
+    const main = new Image();
+    main.className = 'svc__main';
+    main.src = src(data.images[0]);
+    main.alt = data.title;
+    main.decoding = 'async';
+    gallery.classList.toggle('svc__gallery--single', data.images.length === 1);
+    const thumbs = data.images.length > 1 ? data.images.map((name, i) => {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'svc__thumb' + (i === 0 ? ' is-active' : '');
+      btn.setAttribute('aria-label', `Фото ${i + 1}`);
+      const img = new Image();
+      img.src = src(name);
+      img.alt = '';
+      btn.append(img);
+      btn.addEventListener('click', () => {
+        main.src = src(name);
+        $$('.svc__thumb', gallery).forEach((t) => t.classList.toggle('is-active', t === btn));
+      });
+      return btn;
+    }) : [];
+    const nodes = [main];
+    if (thumbs.length) {
+      const strip = document.createElement('div');
+      strip.className = 'svc__thumbs';
+      strip.append(...thumbs);
+      nodes.push(strip);
+    }
+    gallery.replaceChildren(...nodes);
   }
 
   /* ---------------- Portfolio: filter + slider ---------------- */
@@ -197,7 +223,7 @@
   const applyFilter = (cat) => {
     let visible = 0;
     $$('.work', works).forEach((w) => {
-      const show = cat === 'all' || w.dataset.cat === cat;
+      const show = cat === 'all' || w.dataset.cat.split(' ').includes(cat);
       w.hidden = !show;
       if (show) visible++;
     });
