@@ -28,7 +28,7 @@
         ['Естественный вид:', 'современные техники (особенно акварельная) позволяют добиться эффекта «своих» ухоженных губ без ощущения яркой помады.'],
       ],
       price: '8 000 ₽',
-      images: ['works/brows-17.webp', 'works/lips-09.webp', 'works/lips-13.webp', 'works/lips-04.webp', 'works/lips-06.webp'],
+      images: ['works/brows-17.webp', 'works/lips-09.webp?v=2', 'works/lips-13.webp', 'works/lips-04.webp', 'works/lips-06.webp'],
     },
     microblading: {
       title: 'Микроблейдинг бровей волосковый',
