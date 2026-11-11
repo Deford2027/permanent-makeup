@@ -180,7 +180,7 @@ ul { list-style: none; }
 }
 .hero__master-text {
   /* полупрозрачная «стеклянная» плашка, чтобы имя читалось поверх фото */
-  text-align: right; padding: 16px 20px 14px 24px;
+  text-align: right; padding: 16px 22px 14px 22px; /* равные отступы слева и справа */
   /* справа (над тёмными волосами) плашка плотнее, слева — прозрачнее */
   background: linear-gradient(90deg, rgba(250, 242, 235, .55) 0%, rgba(250, 242, 235, .6) 35%, rgba(244, 233, 222, .9) 75%, rgba(242, 230, 218, .95) 100%);
   -webkit-backdrop-filter: blur(12px) saturate(1.1); backdrop-filter: blur(12px) saturate(1.1);
@@ -192,7 +192,7 @@ ul { list-style: none; }
   font-weight: 600; font-size: 32.7px; line-height: .85;
   background: var(--grad-name); -webkit-background-clip: text; background-clip: text; color: transparent;
 }
-.hero__role { margin-top: 20px; width: 189px; margin-left: auto; font-size: 14px; }
+.hero__role { margin-top: 20px; white-space: nowrap; font-size: 14px; } /* ширина плашки = самой широкой строке */
 .hero__video {
   display: flex; flex-direction: column; align-items: center; gap: 6px;
   width: 64px; height: 105px; padding-top: 6px;
@@ -550,7 +550,7 @@ button.video { display: block; width: 100%; padding: 0; background: #000; cursor
   .hero__panel .btn { margin-top: 18px; }
   .hero__master-info { display: none; } /* на телефонах блок с именем и «Видео работы» скрыт */
   .hero__name { font-size: 20.2px; }
-  .hero__role { margin-top: 12px; width: 117px; font-size: 8.65px; }
+  .hero__role { margin-top: 12px; font-size: 8.65px; }
   .hero__master-text { padding: 8px 10px 7px 12px; border-radius: 12px; }
   .hero__video { width: 40px; height: 65px; padding-top: 3.5px; gap: 3px; font-size: 8.65px; border-radius: 25px; }
   .hero__video-circle { width: 32px; height: 32px; }
