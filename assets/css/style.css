@@ -178,7 +178,15 @@ ul { list-style: none; }
   position: absolute; right: 286px; top: 392px; z-index: 3;
   display: flex; align-items: flex-start; gap: 14px;
 }
-.hero__master-text { text-align: right; padding-top: 2px; }
+.hero__master-text {
+  /* полупрозрачная «стеклянная» плашка, чтобы имя читалось поверх фото */
+  text-align: right; padding: 16px 20px 14px 24px;
+  background: rgba(250, 242, 235, .62);
+  -webkit-backdrop-filter: blur(10px) saturate(1.15); backdrop-filter: blur(10px) saturate(1.15);
+  border: 1px solid rgba(255, 255, 255, .55); border-radius: 22px;
+  box-shadow: 0 10px 28px rgba(152, 109, 83, .14);
+}
+.hero__master-text .hero__role { color: #7d7c76; }
 .hero__name {
   font-weight: 600; font-size: 32.7px; line-height: .85;
   background: var(--grad-name); -webkit-background-clip: text; background-clip: text; color: transparent;
@@ -542,6 +550,7 @@ button.video { display: block; width: 100%; padding: 0; background: #000; cursor
   .hero__master-info { top: 139px; right: 23px; gap: 8px; }
   .hero__name { font-size: 20.2px; }
   .hero__role { margin-top: 12px; width: 117px; font-size: 8.65px; }
+  .hero__master-text { padding: 8px 10px 7px 12px; border-radius: 12px; }
   .hero__video { width: 40px; height: 65px; padding-top: 3.5px; gap: 3px; font-size: 8.65px; border-radius: 25px; }
   .hero__video-circle { width: 32px; height: 32px; }
   .hero__video-circle img { width: 13px; height: 12px; }
