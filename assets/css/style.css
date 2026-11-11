@@ -548,7 +548,7 @@ button.video { display: block; width: 100%; padding: 0; background: #000; cursor
   .hero__title-sub { font-size: 23.3px; width: 169px; }
   .hero__text { margin-top: 10px; max-width: 196px; font-size: 12px; }
   .hero__panel .btn { margin-top: 18px; }
-  .hero__master-info { top: 139px; right: 23px; gap: 8px; }
+  .hero__master-info { display: none; } /* на телефонах блок с именем и «Видео работы» скрыт */
   .hero__name { font-size: 20.2px; }
   .hero__role { margin-top: 12px; width: 117px; font-size: 8.65px; }
   .hero__master-text { padding: 8px 10px 7px 12px; border-radius: 12px; }
